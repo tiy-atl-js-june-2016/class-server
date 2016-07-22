@@ -42,4 +42,18 @@ http.put(url + whiskey.id);
 http.delete(url + whiskey.id);
 ```
 
+## Limit
 
+At the end of any collection url you can add a query param `limit` and specity a limit to return. The default is `25`.
+
+For instance: https://class-server.herokuapp.com/collections/something?limit=50
+
+... will return 50 at most.
+
+https://class-server.herokuapp.com/collections/something?limit=5
+
+... will return 5 at most
+
+https://class-server.herokuapp.com/collections/something
+
+... will return 25 at most since no limit was specified

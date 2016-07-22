@@ -16,7 +16,6 @@ var express   = require('express'),
   // GET /collections/:collectionName
     .get(function(req, res, next) {
       var limit = req.query.limit || 25;
-      console.log('Limit', limit);
       req.collection.find({},{limit:limit, sort: [['_id',-1]]}).toArray(function(e, results){
         if (e) { return next(e); }
         res.send(results);
